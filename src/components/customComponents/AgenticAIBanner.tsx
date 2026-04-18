@@ -57,9 +57,9 @@ const HeroSection: React.FC = () => {
 
         <div className="flex flex-wrap justify-center gap-8 mt-12">
           {[
-            { count: '36+', label: 'Hands On Projects' },
+            { count: '20+', label: 'Hands On Projects' },
             { count: '12+', label: 'Capsule Programs' },
-            { count: '150+', label: 'Hours of learning' },
+            { count: '120+', label: 'Hours of learning' },
             { count: '12+', label: 'Badges Earned' },
           ].map((item, index) => (
             <div key={index} className="text-center">
