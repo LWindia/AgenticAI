@@ -4,7 +4,11 @@ const nextConfig = {
     return [
       {
         source: "/:path*",
-        headers: [{ key: "X-Content-Type-Options", value: "nosniff" }],
+        headers: [
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          { key: "X-Frame-Options", value: "SAMEORIGIN" },
+          { key: "X-XSS-Protection", value: "1; mode=block" },
+        ],
       },
     ];
   },
@@ -20,6 +24,9 @@ const nextConfig = {
   compress: true,
   // Power by header removal
   poweredByHeader: false,
+  // Optimize for iOS Safari
+  swcMinify: true,
+  reactStrictMode: true,
 };
 
 module.exports = nextConfig;

@@ -99,6 +99,17 @@
   body {
     /* Match site chrome (dark). Light theme tokens caused white body + extra repaints on mobile. */
     @apply bg-black text-zinc-100;
+    /* iOS Safari fixes */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+  }
+  
+  /* iOS Safari scroll fix */
+  html {
+    -webkit-overflow-scrolling: touch;
+    overflow-x: hidden;
   }
 }
 
@@ -140,21 +151,30 @@
   }
 }
 
-/* Global Safari kill-switch for compositor-heavy effects. */
-.safari-webkit *,
-.safari-webkit *::before,
-.safari-webkit *::after {
-  animation: none !important;
-  transition-duration: 0s !important;
+/* Global Safari optimizations for better iOS performance */
+.safari-webkit * {
+  /* Reduce animation complexity on iOS */
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
 }
 
+/* Disable heavy filters only on iOS Safari */
 .safari-webkit .filter,
-.safari-webkit [class*="blur-"],
-.safari-webkit [class*="shadow-"],
 .safari-webkit [class*="backdrop-blur"] {
-  filter: none !important;
-  -webkit-filter: none !important;
   -webkit-backdrop-filter: none !important;
   backdrop-filter: none !important;
-  box-shadow: none !important;
+}
+
+/* iOS Safari specific fixes */
+@supports (-webkit-touch-callout: none) {
+  /* This targets iOS Safari specifically */
+  body {
+    min-height: -webkit-fill-available;
+  }
+  
+  /* Fix for iOS viewport height issues */
+  .min-h-screen {
+    min-height: -webkit-fill-available;
+  }
 }
