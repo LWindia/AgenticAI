@@ -1,5 +1,3 @@
-"use client"
-
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import Link from "next/link"
@@ -412,7 +410,7 @@ const tracks = [
           return (
             <Card
               key={index}
-              className="bg-black border border-gray-800 rounded-lg overflow-hidden flex flex-col min-h-[290px] transition-all duration-300 lg:hover:scale-[1.03] hover:border-purple-500/60 lg:hover:shadow-lg lg:hover:shadow-purple-900/30"
+              className="bg-black border border-gray-800 rounded-lg overflow-hidden flex flex-col min-h-[290px]"
             >
               <div className="flex-grow">
                 <CardHeader className="pb-2">

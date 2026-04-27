@@ -1,4 +1,3 @@
-"use client"
 import React from 'react';
 import { BookOpen, Users, Award, Check } from 'lucide-react';
 
