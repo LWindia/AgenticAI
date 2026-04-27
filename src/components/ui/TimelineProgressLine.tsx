@@ -7,6 +7,12 @@ export function TimelineProgressLine() {
   const fillRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const media = window.matchMedia("(min-width: 1024px)");
+    const motion = window.matchMedia("(prefers-reduced-motion: no-preference)");
+    if (!media.matches || !motion.matches) {
+      return;
+    }
+
     let frame = 0;
 
     const updateProgress = () => {
