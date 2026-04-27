@@ -1,15 +1,21 @@
-// Server component — no state/effects needed
 import Link from "next/link";
+import Image from "next/image";
 
 export default function CourseNavbar() {
   return (
     <header className="sticky top-0 z-50 w-full bg-black border-b border-white/10">
       <div className="max-w-6xl mx-auto flex items-center justify-between py-3 px-6">
         <Link href="/" className="flex items-center" aria-label="LinuxWorld Home">
-          {/* Plain text logo — zero image download, zero mobile crash risk */}
-          <span className="text-white font-bold text-lg tracking-widest uppercase select-none">
-            LinuxWorld
-          </span>
+          {/* Use Next.js Image with strict sizes so only a small optimized version downloads */}
+          <Image
+            src="/assets/WHITE LW.png"
+            alt="LinuxWorld"
+            width={96}
+            height={18}
+            sizes="96px"
+            className="object-contain"
+            style={{ width: 96, height: 18 }}
+          />
         </Link>
         <Link
           href="/"

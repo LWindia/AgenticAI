@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { List, X } from "lucide-react";
+import Image from "next/image";
 import Link from 'next/link';
 import { ProgramCard, SideCategories } from './NavbarComponents';
 import { roadmapData } from '../../../../data/navbar';
@@ -45,11 +46,17 @@ const Navbar: React.FC = () => {
   return (
     <header className="fixed top-0 z-50 w-full bg-black border-b border-zinc-800">
       <div className="container mx-auto flex items-center justify-between py-4 px-6">
-        {/* Logo — plain text, zero image download */}
+        {/* Logo */}
         <Link href="/" className="flex items-center" aria-label="LinuxWorld Home">
-          <span className="text-white font-bold text-lg tracking-widest uppercase select-none">
-            LinuxWorld
-          </span>
+          <Image
+            src="/assets/WHITE LW.png"
+            alt="LinuxWorld"
+            width={96}
+            height={18}
+            sizes="96px"
+            className="object-contain"
+            style={{ width: 96, height: 18 }}
+          />
         </Link>
 
         {/* Desktop Navigation */}
