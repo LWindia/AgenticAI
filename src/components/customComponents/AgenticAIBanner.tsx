@@ -38,7 +38,7 @@ export default function HeroSection() {
 
       <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-col gap-6 px-5 pb-8 pt-20 lg:flex-row lg:items-center lg:gap-16 lg:px-6 lg:py-6 lg:pt-24">
         {/* Static copy */}
-        <div className="flex-1 text-center lg:text-left">
+        <div className="flex-1 text-center lg:text-left desktop-fade-up">
           <h1 className="mb-1 text-2xl font-extrabold leading-tight tracking-tight lg:mb-3 lg:text-5xl">
             AI Warrior:{" "}
             <span className="text-pink-400 lg:bg-gradient-to-r lg:from-purple-400 lg:to-pink-500 lg:bg-clip-text lg:text-transparent">
@@ -56,7 +56,7 @@ export default function HeroSection() {
 
           <div className="mb-4 grid grid-cols-2 gap-2 lg:grid-cols-4 lg:gap-3">
             {STATS.map((item) => (
-              <div key={item.label} className="rounded-xl border border-white/10 bg-white/5 py-2 text-center lg:p-3">
+              <div key={item.label} className="desktop-card-hover rounded-xl border border-white/10 bg-white/5 py-2 text-center lg:p-3">
                 <p className="text-xl font-bold text-purple-300 lg:bg-gradient-to-r lg:from-purple-400 lg:to-pink-400 lg:bg-clip-text lg:text-transparent lg:text-2xl">
                   {item.count}
                 </p>
@@ -94,7 +94,7 @@ export default function HeroSection() {
             </p>
             <div className="flex flex-wrap justify-center gap-1.5 lg:justify-start lg:gap-2">
               {COMPANIES.map((c) => (
-                <span key={c} className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold text-gray-300 lg:px-4 lg:py-1.5">
+                <span key={c} className="desktop-card-hover rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold text-gray-300 lg:px-4 lg:py-1.5">
                   {c}
                 </span>
               ))}
@@ -109,7 +109,7 @@ export default function HeroSection() {
             </p>
             <div className="flex flex-wrap justify-center gap-1.5 lg:justify-start lg:gap-2">
               {HIGHLIGHTS.map((badge) => (
-                <span key={badge} className="rounded-full border border-purple-500/25 bg-purple-600/10 px-3 py-1 text-xs font-medium text-purple-300 lg:px-4 lg:py-1.5 lg:text-sm">
+                <span key={badge} className="desktop-shine rounded-full border border-purple-500/25 bg-purple-600/10 px-3 py-1 text-xs font-medium text-purple-300 lg:px-4 lg:py-1.5 lg:text-sm">
                   {badge}
                 </span>
               ))}
@@ -118,7 +118,9 @@ export default function HeroSection() {
         </div>
 
         {/* Client form — only this part hydrates */}
-        <HeroLeadForm />
+        <div className="flex justify-center lg:block desktop-fade-up desktop-fade-up-delay">
+          <HeroLeadForm />
+        </div>
       </div>
     </section>
   );

@@ -21,10 +21,10 @@ export default function CourseHero({ title, titleLine2, subtitle, duration, fee,
       <div className="relative mx-auto max-w-6xl px-6 py-12 flex flex-col md:flex-row items-center justify-between gap-8 min-h-[320px]">
         
         {/* LEFT — Content */}
-        <div className="flex-1">
+        <div className="reveal-up flex-1" data-visible="true">
           {/* Badge name pill */}
           {badge && (
-            <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-1 mb-4 w-fit">
+            <div className="desktop-card-hover inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-1 mb-4 w-fit">
               <span className="h-2 w-2 rounded-full bg-purple-400 lg:animate-pulse" />
               <span className="text-xs font-semibold text-purple-300 uppercase tracking-wider">{badge}</span>
             </div>
@@ -45,17 +45,17 @@ export default function CourseHero({ title, titleLine2, subtitle, duration, fee,
 
           {/* Badges row */}
           <div className="flex flex-wrap gap-3 mb-6">
-            <div className="px-4 py-1.5 rounded-full bg-zinc-800/60 border border-zinc-700/50 text-sm text-white">
+            <div className="desktop-card-hover px-4 py-1.5 rounded-full bg-zinc-800/60 border border-zinc-700/50 text-sm text-white">
               <span className="text-zinc-400">⏱️ Duration: </span>{duration}
             </div>
-            <div className="px-4 py-1.5 rounded-full bg-zinc-800/60 border border-zinc-700/50 text-sm text-white">
+            <div className="desktop-card-hover px-4 py-1.5 rounded-full bg-zinc-800/60 border border-zinc-700/50 text-sm text-white">
               <span className="text-zinc-400">💰 Fee: </span>{fee}
             </div>
           </div>
 
           {/* CTA */}
           <a href={enrollLink} target="_blank" rel="noopener noreferrer">
-            <button className="bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold px-8 py-3 rounded-xl hover:opacity-90 transition text-sm shadow-md lg:shadow-lg lg:shadow-purple-900/30">
+            <button className="desktop-button-lift bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold px-8 py-3 rounded-xl hover:opacity-90 transition text-sm shadow-md lg:shadow-lg lg:shadow-purple-900/30">
               Book Your Seat Now →
             </button>
           </a>
@@ -63,10 +63,10 @@ export default function CourseHero({ title, titleLine2, subtitle, duration, fee,
 
         {/* RIGHT — Badge image */}
         {badgeImg && (
-          <div className="flex-shrink-0 flex flex-col items-center gap-4">
+          <div className="reveal-scale flex-shrink-0 flex flex-col items-center gap-4" data-visible="true">
             <div className="relative">
               {/* Glow — desktop only */}
-              <div className="hidden lg:block absolute -inset-8 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full opacity-15 blur-3xl animate-glow-pulse" />
+              <div className="hidden lg:block absolute -inset-8 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full opacity-15 blur-3xl desktop-glow-pulse" />
               {/* Badge — float only on desktop */}
               <div className="relative lg:animate-float">
                 {/* eslint-disable-next-line @next/next/no-img-element */}

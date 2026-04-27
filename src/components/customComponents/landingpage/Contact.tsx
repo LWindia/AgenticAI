@@ -107,7 +107,7 @@ export default function ContactForm() {
 
         <div className="w-full flex flex-col lg:flex-row gap-8">
           {/* Form Section */}
-          <Card className="flex-1 bg-zinc-900/50 border-zinc-800 text-white">
+          <Card className="desktop-card-hover flex-1 bg-zinc-900/50 border-zinc-800 text-white">
             <CardHeader className="text-center pb-2">
               {/* Star rating */}
               <div className="flex items-center justify-center gap-1.5 mb-2">
@@ -155,7 +155,7 @@ export default function ContactForm() {
                       <Button key={exp} type="button" variant="outline" size="sm"
                         className={`rounded-full px-4 transition-colors duration-200 ${
                           experience === exp
-                            ? "border-transparent bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg shadow-purple-900/30 lg:scale-105"
+                            ? "desktop-button-lift border-transparent bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg shadow-purple-900/30 lg:scale-105"
                             : "border-zinc-700 bg-zinc-800/50 text-zinc-300 hover:border-purple-500/50 hover:bg-zinc-700"
                         }`}
                         onClick={() => setExperience(exp)}>
@@ -180,7 +180,7 @@ export default function ContactForm() {
 
                 <CardFooter className="flex flex-col gap-2 px-0 pb-0">
                   <Button type="submit" disabled={isSubmitting}
-                    className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-indigo-700 hover:to-purple-700 text-white py-6 disabled:opacity-70 disabled:cursor-not-allowed">
+                    className="desktop-button-lift w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-indigo-700 hover:to-purple-700 text-white py-6 disabled:opacity-70 disabled:cursor-not-allowed">
                     {isSubmitting ? (
                       <span className="flex items-center gap-2">
                         <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24" fill="none">
@@ -211,7 +211,7 @@ export default function ContactForm() {
 
             <div className="space-y-4">
               {/* Phone card */}
-              <div className="flex items-center gap-4 bg-zinc-900/60 border border-zinc-800 rounded-xl p-4 hover:border-purple-500/40 transition-colors">
+              <div className="desktop-card-hover flex items-center gap-4 bg-zinc-900/60 border border-zinc-800 rounded-xl p-4 hover:border-purple-500/40 transition-colors">
                 <div className="bg-gradient-to-r from-purple-600 to-pink-600 p-3 rounded-xl flex-shrink-0">
                   <Phone className="h-5 w-5 text-white" />
                 </div>
@@ -226,7 +226,7 @@ export default function ContactForm() {
 
               {/* WhatsApp card */}
               <a href="https://wa.me/919772201449" target="_blank" rel="noopener noreferrer"
-                className="flex items-center gap-4 bg-green-900/20 border border-green-800/40 rounded-xl p-4 hover:border-green-500/60 transition-colors">
+                className="desktop-card-hover flex items-center gap-4 bg-green-900/20 border border-green-800/40 rounded-xl p-4 hover:border-green-500/60 transition-colors">
                 <div className="bg-green-600 p-3 rounded-xl flex-shrink-0">
                   <MessageCircle className="h-5 w-5 text-white" />
                 </div>
@@ -238,7 +238,7 @@ export default function ContactForm() {
               </a>
 
               {/* Email card */}
-              <div className="flex items-center gap-4 bg-zinc-900/60 border border-zinc-800 rounded-xl p-4 hover:border-purple-500/40 transition-colors">
+              <div className="desktop-card-hover flex items-center gap-4 bg-zinc-900/60 border border-zinc-800 rounded-xl p-4 hover:border-purple-500/40 transition-colors">
                 <div className="bg-gradient-to-r from-indigo-600 to-purple-600 p-3 rounded-xl flex-shrink-0">
                   <Mail className="h-5 w-5 text-white" />
                 </div>

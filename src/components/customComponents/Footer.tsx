@@ -11,7 +11,7 @@ const  Footer= () => {
         {/* Feature Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
           {/* Learning Card */}
-          <div className="bg-gray-900/80 rounded-lg p-5 border border-gray-800">
+          <div className="desktop-card-hover bg-gray-900/80 rounded-lg p-5 border border-gray-800">
             <div className="flex items-center mb-3">
               <div className="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center mr-2">
                 <BookOpen size={16} className="text-gray-400" />
@@ -24,7 +24,7 @@ const  Footer= () => {
           </div>
 
           {/* Community Card */}
-          <div className="bg-gray-900/80 rounded-lg p-5 border border-gray-800">
+          <div className="desktop-card-hover bg-gray-900/80 rounded-lg p-5 border border-gray-800">
             <div className="flex items-center mb-3">
               <div className="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center mr-2">
                 <Users size={16} className="text-gray-400" />
@@ -37,7 +37,7 @@ const  Footer= () => {
           </div>
 
           {/* Outcomes Card */}
-          <div className="bg-gray-900/80 rounded-lg p-5 border border-gray-800">
+          <div className="desktop-card-hover bg-gray-900/80 rounded-lg p-5 border border-gray-800">
             <div className="flex items-center mb-3">
               <div className="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center mr-2">
                 <Award size={16} className="text-gray-400" />
@@ -51,7 +51,7 @@ const  Footer= () => {
         </div>
 
         {/* Main CTA Card */}
-        <div className="bg-gray-900/80 rounded-lg p-6 border border-gray-800">
+        <div className="desktop-card-hover bg-gray-900/80 rounded-lg p-6 border border-gray-800">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Left Section - CTA */}
             <div className="flex flex-col justify-center">
@@ -60,7 +60,7 @@ const  Footer= () => {
               </h2>
               
               <div className="mb-4">
-                <button className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-2 rounded text-sm font-medium transition-colors">
+                <button className="desktop-button-lift bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-2 rounded text-sm font-medium transition-colors">
                   Become an AI Warrior
                 </button>
               </div>

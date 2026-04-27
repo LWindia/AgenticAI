@@ -18,7 +18,7 @@ export function TimelineDemo() {
                 return (
                   <div
                     key={index}
-                    className="relative mb-8 overflow-hidden rounded-xl border border-gray-700 bg-black shadow-none lg:shadow-md"
+                    className="desktop-card-hover relative mb-8 overflow-hidden rounded-xl border border-gray-700 bg-black shadow-none lg:shadow-md"
                   >
                     {/* Two-column layout */}
                     <div className="flex items-stretch">
@@ -47,7 +47,7 @@ export function TimelineDemo() {
                           </span>
                           {capsule.badgeLink ? (
                             <a href={capsule.badgeLink} target="_blank" rel="noopener noreferrer"
-                              className="px-3 py-1 text-sm bg-gray-800 border gradient-border rounded-lg hover:opacity-90 transition-opacity cursor-pointer text-center">
+                              className="desktop-button-lift px-3 py-1 text-sm bg-gray-800 border gradient-border rounded-lg hover:opacity-90 transition-opacity cursor-pointer text-center">
                               Price: {capsule.price}
                             </a>
                           ) : (

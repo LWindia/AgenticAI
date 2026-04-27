@@ -61,7 +61,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
             >
               <div className="flex flex-col md:flex-row z-40 items-center self-start max-w-xs lg:max-w-sm md:w-full">
                 <div className="h-10 absolute left-3 md:left-3 w-10 rounded-full bg-black flex items-center justify-center">
-                  <div className="h-4 w-4 rounded-full bg-purple-700 border border-purple-300/70 p-2 shadow-none lg:shadow-[0_0_18px_rgba(168,85,247,0.35)]" />
+                  <div className="desktop-marker-pulse h-4 w-4 rounded-full bg-purple-700 border border-purple-300/70 p-2 shadow-none lg:shadow-[0_0_18px_rgba(168,85,247,0.35)]" />
                 </div>
                 <div className="hidden md:block md:pl-20">
                   <h3 className="text-xl md:text-3xl font-bold text-white">

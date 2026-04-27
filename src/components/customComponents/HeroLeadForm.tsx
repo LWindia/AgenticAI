@@ -38,7 +38,7 @@ export default function HeroLeadForm() {
 
   return (
     <div className="w-full shrink-0 lg:w-[420px]">
-      <div className="relative rounded-2xl border border-white/15 bg-zinc-900/95 p-4 lg:border-white/20 lg:bg-zinc-900 lg:p-8">
+      <div className="desktop-card-hover relative rounded-2xl border border-white/15 bg-zinc-900/95 p-4 lg:border-white/20 lg:bg-zinc-900 lg:p-8">
         <div className="absolute -top-px left-1/2 h-px w-3/4 -translate-x-1/2 bg-gradient-to-r from-transparent via-purple-500 to-transparent" />
         <div className="mb-4 text-center">
           <span className="mb-2 inline-block rounded-full bg-gradient-to-r from-purple-600 to-pink-600 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white lg:mb-3 lg:px-4">
@@ -64,7 +64,7 @@ export default function HeroLeadForm() {
             placeholder="Your Email Id" required autoComplete="email"
             className="w-full rounded-xl border border-gray-700 bg-black/50 px-4 py-2.5 text-sm text-white placeholder:text-gray-500 focus:border-purple-500 focus:outline-none lg:py-3" />
           <button type="submit" disabled={isSubmitting}
-            className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 py-3 text-sm font-bold text-white hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60 lg:py-3.5 lg:text-base">
+            className="desktop-button-lift flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 py-3 text-sm font-bold text-white hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60 lg:py-3.5 lg:text-base">
             {isSubmitting ? (
               <>
                 <svg className="h-4 w-4 animate-spin" viewBox="0 0 24 24" fill="none" aria-hidden>
