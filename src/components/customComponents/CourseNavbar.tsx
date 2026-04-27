@@ -1,17 +1,31 @@
-"use client";
+// Server component — no state/effects needed
 import Link from "next/link";
-import Image from "next/image";
-import { ArrowLeft } from "lucide-react";
 
 export default function CourseNavbar() {
   return (
     <header className="sticky top-0 z-50 w-full bg-black border-b border-white/10">
       <div className="max-w-6xl mx-auto flex items-center justify-between py-3 px-6">
-        <Link href="/" className="flex items-center space-x-2">
-          <Image src="/assets/LW-logo-white.png" alt="Logo" width={96} height={18} className="object-contain" priority />
+        <Link href="/" className="flex items-center" aria-label="LinuxWorld Home">
+          {/* Plain img avoids Next.js generating a 3840w srcset for a 96×18 logo */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/assets/LW-logo-white.png"
+            alt="LinuxWorld"
+            width={96}
+            height={18}
+            loading="eager"
+            decoding="sync"
+            style={{ width: 96, height: 18, objectFit: "contain" }}
+          />
         </Link>
-        <Link href="/" className="flex items-center gap-2 text-sm text-gray-300 hover:text-white transition-colors bg-white/5 border border-white/10 rounded-full px-4 py-1.5">
-          <ArrowLeft className="h-4 w-4" />
+        <Link
+          href="/"
+          className="flex items-center gap-2 text-sm text-gray-300 hover:text-white transition-colors bg-white/5 border border-white/10 rounded-full px-4 py-1.5"
+        >
+          {/* Static SVG arrow — no lucide-react client bundle */}
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+            <path d="M19 12H5M12 5l-7 7 7 7" />
+          </svg>
           Back to Home
         </Link>
       </div>

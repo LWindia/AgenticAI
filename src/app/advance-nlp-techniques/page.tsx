@@ -1,12 +1,13 @@
+import dynamic from 'next/dynamic';
 import CourseNavbar from "@/components/customComponents/CourseNavbar";
 import Hero from "@/components/CoursePage/advance-nlp-technique/Hero";
 
-import AIRoadmap from "@/components/customComponents/landingpage/Roadmap";
+const AIRoadmap = dynamic(() => import('@/components/customComponents/landingpage/Roadmap'), { loading: () => <div className="w-full bg-black py-10" /> });
+const FAQ = dynamic(() => import('@/components/customComponents/Faq'), { loading: () => <div className="w-full bg-black py-8" /> });
+const ContactForm = dynamic(() => import('@/components/customComponents/landingpage/Contact'), { loading: () => <div className="w-full bg-black py-8" /> });
+const ProgramsSection = dynamic(() => import('../../components/CoursePage/foundation-in-ml/project/Project'), { loading: () => <div className="w-full bg-black py-10" /> });
+const CertificateDisplay = dynamic(() => import('@/components/CoursePage/foundation-in-ml/Cert'), { loading: () => <div className="w-full bg-black py-8" /> });
 
-import FAQ from '@/components/customComponents/Faq';
-import ContactForm from '@/components/customComponents/landingpage/Contact';
-import ProgramsSection from "../../components/CoursePage/foundation-in-ml/project/Project";
-import CertificateDisplay from "@/components/CoursePage/foundation-in-ml/Cert";
 export default function Home() {
   return (
    <>

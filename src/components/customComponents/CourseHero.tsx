@@ -1,4 +1,5 @@
 import { BADGE_IMAGES } from "../../../data/timeline";
+import { cloudinaryBadgeSrc } from "@/lib/cloudinary";
 
 interface CourseHeroProps {
   title: string;
@@ -70,7 +71,7 @@ export default function CourseHero({ title, titleLine2, subtitle, duration, fee,
               <div className="relative lg:animate-float">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                  src={badgeImg}
+                  src={cloudinaryBadgeSrc(badgeImg)}
                   alt={badge}
                   className="h-52 w-52 object-contain md:h-64 md:w-64 lg:drop-shadow-2xl"
                   loading="lazy"

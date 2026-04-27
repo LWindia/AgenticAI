@@ -1,12 +1,13 @@
+import dynamic from 'next/dynamic';
 import CourseNavbar from "@/components/customComponents/CourseNavbar";
 import Hero from "@/components/advancegenerativemodels/CoursePage/Hero";
 
-import AIRoadmap from "@/components/advancegenerativemodels/CoursePage/Roadmap";
+const AIRoadmap = dynamic(() => import('@/components/advancegenerativemodels/CoursePage/Roadmap'), { loading: () => <div className="w-full bg-black py-10" /> });
+const FAQ = dynamic(() => import('@/components/customComponents/Faq'), { loading: () => <div className="w-full bg-black py-8" /> });
+const ContactForm = dynamic(() => import('@/components/customComponents/landingpage/Contact'), { loading: () => <div className="w-full bg-black py-8" /> });
+const ProgramsSection = dynamic(() => import('../../components/advancegenerativemodels/CoursePage/project/Project'), { loading: () => <div className="w-full bg-black py-10" /> });
+const CertificateDisplay = dynamic(() => import('@/components/advancegenerativemodels/CoursePage/Cert'), { loading: () => <div className="w-full bg-black py-8" /> });
 
-import FAQ from '@/components/customComponents/Faq';
-import ContactForm from '@/components/customComponents/landingpage/Contact';
-import ProgramsSection from "../../components/advancegenerativemodels/CoursePage/project/Project";
-import CertificateDisplay from "@/components/advancegenerativemodels/CoursePage/Cert";
 export default function Home() {
   return (
    <>
