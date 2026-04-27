@@ -5,7 +5,15 @@ import { Capsule } from '../../../../types/navbar';
 import { BADGE_IMAGES } from '../../../../data/timeline';
 import { cloudinaryBadgeSrc } from '@/lib/cloudinary';
 
-export const ProgramCard: React.FC<Capsule> = ({ name, outcome, badge, duration, price, href }) => {
+export const ProgramCard: React.FC<Capsule & { showBadgeImage?: boolean }> = ({
+  name,
+  outcome,
+  badge,
+  duration,
+  price,
+  href,
+  showBadgeImage = true,
+}) => {
   const badgeImg = badge ? BADGE_IMAGES[badge] : null;
 
   const cardContent = (
@@ -23,19 +31,25 @@ export const ProgramCard: React.FC<Capsule> = ({ name, outcome, badge, duration,
         </div>
 
         {/* RIGHT — badge image, larger */}
-        {badgeImg && (
+        {showBadgeImage && badgeImg && (
           <div className="relative w-20 md:w-24 flex-shrink-0 flex items-center justify-center overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-l from-purple-900/30 to-transparent" />
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={cloudinaryBadgeSrc(badgeImg)}
-              alt={badge}
-              width={64}
-              height={64}
-              decoding="async"
-              className="relative w-14 h-14 md:w-16 md:h-16 object-contain opacity-95 transition-transform duration-300 lg:drop-shadow-lg lg:group-hover:scale-110"
-              loading="lazy"
-            />
+            <picture>
+              <source
+                media="(min-width: 1024px)"
+                srcSet={cloudinaryBadgeSrc(badgeImg, 256)}
+              />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={cloudinaryBadgeSrc(badgeImg, 192)}
+                alt={badge}
+                width={64}
+                height={64}
+                decoding="async"
+                className="relative w-14 h-14 md:w-16 md:h-16 object-contain opacity-95 transition-transform duration-300 lg:drop-shadow-lg lg:group-hover:scale-110"
+                loading="lazy"
+              />
+            </picture>
           </div>
         )}
       </div>

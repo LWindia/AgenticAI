@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import { List, X } from "lucide-react";
+import { ChevronDown, List, X } from "lucide-react";
 import Image from "next/image";
 import Link from 'next/link';
 import { ProgramCard, SideCategories } from './NavbarComponents';
@@ -15,6 +15,7 @@ const NAV_ITEMS = [
 const Navbar: React.FC = () => {
   markRender("Navbar");
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isMobileProgramsOpen, setMobileProgramsOpen] = useState(false);
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState<string>('Srishti');
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -51,11 +52,7 @@ const Navbar: React.FC = () => {
           <Image
             src="/assets/WHITE LW.png"
             alt="LinuxWorld"
-            width={96}
-            height={18}
-            sizes="96px"
-            className="object-contain"
-            style={{ width: 96, height: 18 }}
+            width={180} height={34} sizes="180px" className="object-contain" style={{ width: 180, height: 34 }}
           />
         </Link>
 
@@ -91,18 +88,51 @@ const Navbar: React.FC = () => {
 
       {/* Mobile Menu — CSS only, no framer-motion */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden absolute right-4 top-full bg-black w-64 shadow-lg z-10 rounded-lg border border-gray-800">
+        <div className="lg:hidden absolute left-4 right-4 top-full bg-black shadow-lg z-10 rounded-lg border border-gray-800">
           <div className="p-4">
-            <ul className="space-y-4">
-              {NAV_ITEMS.map((item, index) => (
-                <li key={index}>
-                  <a href={item.href} className="block text-white hover:text-purple-400 transition-colors duration-200"
-                    onClick={() => setMobileMenuOpen(false)}>
-                    {item.text}
-                  </a>
-                </li>
-              ))}
-            </ul>
+            <button
+              type="button"
+              className="flex w-full items-center justify-between text-left text-white hover:text-purple-400 transition-colors duration-200"
+              onClick={() => setMobileProgramsOpen((open) => !open)}
+              aria-expanded={isMobileProgramsOpen}
+            >
+              <span>AI Training Programs</span>
+              <ChevronDown
+                className={`h-4 w-4 transition-transform duration-200 ${isMobileProgramsOpen ? "rotate-180" : ""}`}
+              />
+            </button>
+
+            {isMobileProgramsOpen && selectedLevel && (
+              <div className="mt-4 max-h-[62vh] overflow-y-auto rounded-xl border border-white/10 bg-zinc-950 p-3">
+                <div className="mb-3 flex gap-2 overflow-x-auto pb-1">
+                  {roadmapData.map((level) => (
+                    <button
+                      key={level.level}
+                      type="button"
+                      className={`shrink-0 rounded-full border px-3 py-1 text-xs font-semibold transition-colors ${
+                        selectedCategory === level.level
+                          ? "border-purple-400 bg-purple-600/25 text-white"
+                          : "border-white/10 bg-white/5 text-zinc-400"
+                      }`}
+                      onClick={() => setSelectedCategory(level.level)}
+                    >
+                      {level.level.trim()}
+                    </button>
+                  ))}
+                </div>
+
+                <div className="space-y-3">
+                  {selectedLevel.capsules.map((capsule, index) => (
+                    <ProgramCard
+                      key={index}
+                      {...capsule}
+                      showBadgeImage={false}
+                    />
+                  ))}
+                </div>
+              </div>
+            )}
+
             <Link href="#contact"
               className="block w-full mt-6 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-2 rounded-lg hover:opacity-90 transition-all duration-300 text-center"
               onClick={() => setMobileMenuOpen(false)}>

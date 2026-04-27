@@ -10,11 +10,7 @@ export default function CourseNavbar() {
           <Image
             src="/assets/WHITE LW.png"
             alt="LinuxWorld"
-            width={96}
-            height={18}
-            sizes="96px"
-            className="object-contain"
-            style={{ width: 96, height: 18 }}
+            width={180} height={34} sizes="180px" className="object-contain" style={{ width: 180, height: 34 }}
           />
         </Link>
         <Link

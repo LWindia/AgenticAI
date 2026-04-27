@@ -70,13 +70,20 @@ export default function CourseHero({ title, titleLine2, subtitle, duration, fee,
               {/* Badge — float only on desktop */}
               <div className="relative lg:animate-float">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                  src={cloudinaryBadgeSrc(badgeImg)}
-                  alt={badge}
-                  className="h-52 w-52 object-contain md:h-64 md:w-64 lg:drop-shadow-2xl"
-                  loading="lazy"
-                  decoding="async"
-                />
+                <picture>
+                  <source
+                    media="(min-width: 1024px)"
+                    srcSet={cloudinaryBadgeSrc(badgeImg, 512)}
+                  />
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={cloudinaryBadgeSrc(badgeImg, 192)}
+                    alt={badge}
+                    className="h-52 w-52 object-contain md:h-64 md:w-64 lg:drop-shadow-2xl"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
               </div>
             </div>
             <div className="bg-white/5 border border-white/20 rounded-full px-5 py-2 text-center">

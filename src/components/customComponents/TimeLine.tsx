@@ -62,16 +62,22 @@ export function TimelineDemo() {
                       {badgeImg && (
                         <div className="relative w-32 sm:w-40 flex-shrink-0 flex items-center justify-center overflow-hidden">
                           <div className="absolute inset-0 bg-gradient-to-l from-purple-900/30 to-transparent" />
-                          {/* eslint-disable-next-line @next/next/no-img-element */}
-                          <img
-                            src={cloudinaryBadgeSrc(badgeImg)}
-                            alt={capsule.badge}
-                            width={128}
-                            height={128}
-                            decoding="async"
-                            className="relative w-24 h-24 sm:w-32 sm:h-32 object-contain opacity-90 lg:drop-shadow-xl"
-                            loading="lazy"
-                          />
+                          <picture>
+                            <source
+                              media="(min-width: 1024px)"
+                              srcSet={cloudinaryBadgeSrc(badgeImg, 384)}
+                            />
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img
+                              src={cloudinaryBadgeSrc(badgeImg, 192)}
+                              alt={capsule.badge}
+                              width={128}
+                              height={128}
+                              decoding="async"
+                              className="relative w-24 h-24 sm:w-32 sm:h-32 object-contain opacity-90 lg:drop-shadow-xl"
+                              loading="lazy"
+                            />
+                          </picture>
                         </div>
                       )}
                     </div>
