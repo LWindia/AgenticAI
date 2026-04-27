@@ -23,7 +23,6 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.483.0",
-    "motion": "^11.11.17",
     "next": "14.2.35",
     "nodemailer": "^6.10.0",
     "react": "^18",
