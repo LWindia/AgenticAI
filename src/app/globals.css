@@ -2,22 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-
-
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -39,42 +23,26 @@
     --border: 0 0% 89.8%;
     --input: 0 0% 89.8%;
     --ring: 0 0% 3.9%;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
     --radius: 0.5rem;
   }
-  .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-black text-zinc-100;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  html {
+    overflow-x: hidden;
   }
 }
 
-
+/* Gradient border utility */
 .gradient-border {
   border-width: 1.5px;
   border-style: solid;
@@ -82,53 +50,10 @@
   border-image-source: linear-gradient(to right, #7e22ce, #db2777);
 }
 
-/* Safari: only enhance backdrop-blur on lg+ to avoid mobile GPU cost */
-@media (min-width: 1024px) {
-  @supports (-webkit-backdrop-filter: none) {
-    .backdrop-blur-xl { -webkit-backdrop-filter: blur(24px); }
-    .backdrop-blur-lg { -webkit-backdrop-filter: blur(16px); }
-    .backdrop-blur-md { -webkit-backdrop-filter: blur(12px); }
-    .backdrop-blur-sm { -webkit-backdrop-filter: blur(4px); }
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    /* Match site chrome (dark). Light theme tokens caused white body + extra repaints on mobile. */
-    @apply bg-black text-zinc-100;
-    /* iOS Safari fixes */
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-tap-highlight-color: transparent;
-    -webkit-touch-callout: none;
-  }
-  
-  /* iOS Safari scroll fix */
-  html {
-    -webkit-overflow-scrolling: touch;
-    overflow-x: hidden;
-  }
-}
-
-@keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-.animate-marquee-slow {
-  animation: none;
-}
-
-@media (min-width: 1024px) {
-  @media (prefers-reduced-motion: no-preference) {
-    .animate-marquee-slow {
-      animation: marquee 20s linear infinite;
-    }
-  }
-}
+/* Animations — off by default, desktop only */
+.animate-float { animation: none; }
+.animate-glow-pulse { animation: none; }
+.animate-marquee-slow { animation: none; }
 
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
@@ -140,41 +65,13 @@
   50% { opacity: 0.7; }
 }
 
-/* Animations — disabled by default (mobile-first), enabled on desktop only */
-.animate-float { animation: none; }
-.animate-glow-pulse { animation: none; }
-
-@media (min-width: 1024px) {
-  @media (prefers-reduced-motion: no-preference) {
-    .animate-float { animation: float 3s ease-in-out infinite; }
-    .animate-glow-pulse { animation: glow-pulse 2s ease-in-out infinite; }
-  }
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
-/* Global Safari optimizations for better iOS performance */
-.safari-webkit * {
-  /* Reduce animation complexity on iOS */
-  animation-duration: 0.01ms !important;
-  animation-iteration-count: 1 !important;
-  transition-duration: 0.01ms !important;
-}
-
-/* Disable heavy filters only on iOS Safari */
-.safari-webkit .filter,
-.safari-webkit [class*="backdrop-blur"] {
-  -webkit-backdrop-filter: none !important;
-  backdrop-filter: none !important;
-}
-
-/* iOS Safari specific fixes */
-@supports (-webkit-touch-callout: none) {
-  /* This targets iOS Safari specifically */
-  body {
-    min-height: -webkit-fill-available;
-  }
-  
-  /* Fix for iOS viewport height issues */
-  .min-h-screen {
-    min-height: -webkit-fill-available;
-  }
+@media (min-width: 1024px) and (prefers-reduced-motion: no-preference) {
+  .animate-float { animation: float 3s ease-in-out infinite; }
+  .animate-glow-pulse { animation: glow-pulse 2s ease-in-out infinite; }
+  .animate-marquee-slow { animation: marquee 20s linear infinite; }
 }
