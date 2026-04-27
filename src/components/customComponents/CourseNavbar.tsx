@@ -1,16 +1,19 @@
 import Link from "next/link";
-import Image from "next/image";
 
 export default function CourseNavbar() {
   return (
     <header className="sticky top-0 z-50 w-full bg-black border-b border-white/10">
       <div className="max-w-6xl mx-auto flex items-center justify-between py-3 px-6">
         <Link href="/" className="flex items-center" aria-label="LinuxWorld Home">
-          {/* Use Next.js Image with strict sizes so only a small optimized version downloads */}
-          <Image
-            src="/assets/WHITE LW.png"
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/assets/lw-logo.svg"
             alt="LinuxWorld"
-            width={180} height={34} sizes="180px" className="object-contain" style={{ width: 180, height: 34 }}
+            width={120}
+            height={22}
+            className="h-[22px] w-[120px] object-contain"
+            loading="eager"
+            decoding="async"
           />
         </Link>
         <Link

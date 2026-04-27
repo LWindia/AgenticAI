@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { ChevronDown, List, X } from "lucide-react";
-import Image from "next/image";
 import Link from 'next/link';
 import { ProgramCard, SideCategories } from './NavbarComponents';
 import { roadmapData } from '../../../../data/navbar';
@@ -49,10 +48,15 @@ const Navbar: React.FC = () => {
       <div className="container mx-auto flex items-center justify-between py-4 px-6">
         {/* Logo */}
         <Link href="/" className="flex items-center" aria-label="LinuxWorld Home">
-          <Image
-            src="/assets/WHITE LW.png"
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/assets/lw-logo.svg"
             alt="LinuxWorld"
-            width={180} height={34} sizes="180px" className="object-contain" style={{ width: 180, height: 34 }}
+            width={120}
+            height={22}
+            className="h-[22px] w-[120px] object-contain"
+            loading="eager"
+            decoding="async"
           />
         </Link>
 
