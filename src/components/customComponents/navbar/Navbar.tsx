@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { List, X } from "lucide-react";
-import Image from "next/image";
 import Link from 'next/link';
 import { ProgramCard, SideCategories } from './NavbarComponents';
 import { roadmapData } from '../../../../data/navbar';
@@ -46,9 +45,18 @@ const Navbar: React.FC = () => {
   return (
     <header className="fixed top-0 z-50 w-full bg-black border-b border-zinc-800">
       <div className="container mx-auto flex items-center justify-between py-4 px-6">
-        {/* Logo */}
-        <Link href="/" className="flex items-center space-x-2">
-          <Image src="/assets/LW-logo-white.png" alt="Logo" width={96} height={18} className="object-contain" priority />
+        {/* Logo — inline SVG avoids loading a 1.2 MB PNG for a 96×18 element */}
+        <Link href="/" className="flex items-center" aria-label="LinuxWorld Home">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/assets/LW-logo-white.png"
+            alt="LinuxWorld"
+            width={96}
+            height={18}
+            loading="eager"
+            decoding="sync"
+            style={{ width: 96, height: 18, objectFit: 'contain' }}
+          />
         </Link>
 
         {/* Desktop Navigation */}
