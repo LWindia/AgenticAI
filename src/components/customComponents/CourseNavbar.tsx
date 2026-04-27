@@ -6,10 +6,10 @@ export default function CourseNavbar() {
     <header className="sticky top-0 z-50 w-full bg-black border-b border-white/10">
       <div className="max-w-6xl mx-auto flex items-center justify-between py-3 px-6">
         <Link href="/" className="flex items-center" aria-label="LinuxWorld Home">
-          {/* Plain img avoids Next.js generating a 3840w srcset for a 96×18 logo */}
+          {/* SVG logo — ~500 bytes vs 1.18 MB PNG */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/assets/LW-logo-white.png"
+            src="/assets/lw-logo.svg"
             alt="LinuxWorld"
             width={96}
             height={18}

@@ -98,6 +98,7 @@ export default function CourseCert({ certImage, badgeName }: CourseCertProps) {
                       height={380}
                       sizes="(max-width: 640px) 180px, (max-width: 768px) 220px, 280px"
                       className="object-cover w-full h-auto"
+                      loading="lazy"
                     />
                   </div>
                 </div>
