@@ -45,18 +45,11 @@ const Navbar: React.FC = () => {
   return (
     <header className="fixed top-0 z-50 w-full bg-black border-b border-zinc-800">
       <div className="container mx-auto flex items-center justify-between py-4 px-6">
-        {/* Logo — SVG ~500 bytes vs 1.18 MB PNG */}
+        {/* Logo — plain text, zero image download */}
         <Link href="/" className="flex items-center" aria-label="LinuxWorld Home">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/assets/lw-logo.svg"
-            alt="LinuxWorld"
-            width={96}
-            height={18}
-            loading="eager"
-            decoding="sync"
-            style={{ width: 96, height: 18, objectFit: 'contain' }}
-          />
+          <span className="text-white font-bold text-lg tracking-widest uppercase select-none">
+            LinuxWorld
+          </span>
         </Link>
 
         {/* Desktop Navigation */}

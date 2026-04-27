@@ -6,17 +6,10 @@ export default function CourseNavbar() {
     <header className="sticky top-0 z-50 w-full bg-black border-b border-white/10">
       <div className="max-w-6xl mx-auto flex items-center justify-between py-3 px-6">
         <Link href="/" className="flex items-center" aria-label="LinuxWorld Home">
-          {/* SVG logo — ~500 bytes vs 1.18 MB PNG */}
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/assets/lw-logo.svg"
-            alt="LinuxWorld"
-            width={96}
-            height={18}
-            loading="eager"
-            decoding="sync"
-            style={{ width: 96, height: 18, objectFit: "contain" }}
-          />
+          {/* Plain text logo — zero image download, zero mobile crash risk */}
+          <span className="text-white font-bold text-lg tracking-widest uppercase select-none">
+            LinuxWorld
+          </span>
         </Link>
         <Link
           href="/"
