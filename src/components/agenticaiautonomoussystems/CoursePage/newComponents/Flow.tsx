@@ -14,6 +14,7 @@ const PythonIcon = () => (
 // Custom Code Editor component
 const CodeEditor = () => (
   <Card className="rounded-md border border-gray-800 bg-gray-900 p-4 font-mono text-sm text-gray-300 shadow-md lg:shadow-xl">
+     {/* eslint-disable-next-line @next/next/no-img-element */}
      <img src="/assets/aicode.png" alt="AI Team" className="h-full w-full" />
   </Card>
 );
@@ -21,6 +22,7 @@ const CodeEditor = () => (
 // Tools Grid component
 const ToolsGrid = () => (
   <Card className="rounded-md border border-gray-800 bg-gray-900 p-6 shadow-md lg:shadow-xl">
+    {/* eslint-disable-next-line @next/next/no-img-element */}
     <img src="/assets/tools.png" alt="AI Team" className="h-full w-full" />
   </Card>
 );
@@ -28,6 +30,7 @@ const ToolsGrid = () => (
 // Team of Agents visualization
 const TeamVisualization = () => (
   <Card className="rounded-md border border-gray-800 bg-gray-900 p-6 shadow-md lg:shadow-xl">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src="/assets/aiteam.png" alt="AI Team" className="h-full w-full" />
   </Card>
 );
@@ -35,6 +38,7 @@ const TeamVisualization = () => (
 // Apps visualization
 const AppsVisualization = () => (
   <Card className="rounded-md border border-gray-800 bg-gray-900 p-6 shadow-md lg:shadow-xl">
+   {/* eslint-disable-next-line @next/next/no-img-element */}
    <img src="/assets/yourapp.png" alt="AI Team" className="h-full w-full" />
   </Card>
 );

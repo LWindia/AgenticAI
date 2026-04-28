@@ -29,6 +29,7 @@ export default function AIJOB() {
           <div className="bg-[#f8f0e0] rounded-3xl p-6 flex items-center justify-center">
             <div className="w-full h-full relative">
               {/* Chart image */}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/assets/aijob.jpg"
                 alt="AI jobs demand chart"

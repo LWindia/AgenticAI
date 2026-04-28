@@ -9,6 +9,7 @@ interface ProjectCardProps {
 const ProjectCard: React.FC<ProjectCardProps> = ({ image, title, description }) => {
   return (
     <div className="bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+      {/* eslint-disable-next-line @next/next/no-img-element */}
       <img src={image} alt={title} className="w-full h-48 object-cover" />
       <div className="p-4">
         <h3 className="text-xl font-bold mb-2">{title}</h3>

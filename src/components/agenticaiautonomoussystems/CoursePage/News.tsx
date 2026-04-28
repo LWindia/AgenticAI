@@ -18,6 +18,7 @@ const News = () => {
           {/* Main featured article */}
           <div className="w-full lg:w-1/2 mb-4 sm:mb-6 lg:mb-0">
             <div className="relative rounded-lg overflow-hidden h-64 sm:h-80 md:h-96 group">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img 
                 src="/assets/innerpage/news/a6.avif" 
                 alt="AI Myths" 
@@ -30,6 +31,7 @@ const News = () => {
                   The 5 Most Common Myths About Artificial Intelligence - Whats Really True?
                 </h3>
                 <div className="flex items-center mt-2 sm:mt-3 md:mt-4">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img 
                     src="/api/placeholder/40/40" 
                     alt="Author" 
@@ -49,6 +51,7 @@ const News = () => {
           <div className="w-full lg:w-1/2 flex flex-col gap-3 sm:gap-4 md:gap-6">
             {/* Article 1 */}
             <div className="flex items-center gap-3 sm:gap-4">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img 
                 src="/assets/innerpage/news/a1.avif" 
                 alt="ModelMesh" 
@@ -62,6 +65,7 @@ const News = () => {
             
             {/* Article 2 */}
             <div className="flex items-center gap-3 sm:gap-4">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img 
                 src="/assets/innerpage/news/a3.avif" 
                 alt="Service Integrations" 
@@ -75,6 +79,7 @@ const News = () => {
             
             {/* Article 3 */}
             <div className="flex items-center gap-3 sm:gap-4">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img 
                 src="/assets/innerpage/news/a5.avif" 
                 alt="LLM Evaluation" 
@@ -88,6 +93,7 @@ const News = () => {
             
             {/* Article 4 */}
             <div className="flex items-center gap-3 sm:gap-4">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img 
                 src="/assets/innerpage/news/a4.avif" 
                 alt="AI Agents" 
