@@ -15,6 +15,7 @@ export default function CourseNavbar() {
             loading="eager"
             decoding="async"
           />
+          />
         </Link>
         <Link
           href="/"
