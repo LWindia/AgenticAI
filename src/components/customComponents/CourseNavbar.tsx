@@ -7,7 +7,7 @@ export default function CourseNavbar() {
         <Link href="/" className="flex items-center" aria-label="LinuxWorld Home">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="https://res.cloudinary.com/dymamigxu/image/upload/v1777369129/LW-white_qqv7i1.png"
+            src="https://res.cloudinary.com/dymamigxu/image/upload/v1777382779/LW_White_gvs6tv.svg"
             alt="LinuxWorld"
             width={120}
             height={22}

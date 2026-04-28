@@ -29,7 +29,7 @@ const tracks = [
     titleColor: "text-green-300",
     experience: "",
     description: "Grouping customers based on purchasing behavior using K-Means Clustering.",
-    link: "https://www.aiwarriors.in/foundationinmachinelearning"
+    link: "/foundationinmachinelearning"
 
   },
   // {
@@ -64,6 +64,7 @@ const tracks = [
     titleColor: "text-purple-300",
     experience: "",
     description: "Classifying news articles as fake or real using ensemble learning techniques.",
+    link: "/computer-vision-fundamentals"
   },
   // {
   //   id: 8,
@@ -160,6 +161,7 @@ const tracks = [
     titleColor: "text-orange-300",
     experience: "",
     description: "Developing an extractive and abstractive text summarization tool for news.",
+    link: "/nlp-fundamentals"
   },
   // {
   //   id: 20,
@@ -224,6 +226,7 @@ const tracks = [
     titleColor: "text-amber-300",
     experience: "",
     description: "Creating AI-generated music using Generative Adversarial Networks.",
+    link: "/generative-ai-basics"
   },
   // {
   //   id: 28,

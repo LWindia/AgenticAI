@@ -16,7 +16,7 @@ const AVATARS = [
 const COMPANIES = ["Forrester", "Microsoft", "TCS", "Zomato", "Zscaler"];
 
 const STATS = [
-  { count: "5+", label: "Hands-On Projects" },
+  { count: "10+", label: "Hands-On Projects" },
   { count: "10", label: "Capsule Programs" },
   { count: "100+", label: "Hours of Learning" },
   { count: "10", label: "Badges Earned" },
